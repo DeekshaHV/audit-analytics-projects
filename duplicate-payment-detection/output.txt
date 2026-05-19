@@ -1,0 +1,6 @@
+=== Duplicate Payments Detected ===
+
+INV001 | ABC Ltd | 500
+INV002 | XYZ Corp | 750
+
+Total duplicate records found: 4
