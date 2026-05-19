@@ -1,6 +1,6 @@
 import pandas as pd
 
-# Load payment dataset
+# Load dataset
 df = pd.read_csv("payments.csv")
 
 # Detect duplicate payments
@@ -9,17 +9,8 @@ duplicates = df[df.duplicated(
     keep=False
 )]
 
-print("=== DUPLICATE PAYMENTS DETECTED ===")
+print("=== Duplicate Payments Detected ===")
 print(duplicates)
 
-# Summary statistics
-print("\n=== AUDIT SUMMARY ===")
-print("Total transactions:", len(df))
-print("Duplicate records found:", len(duplicates))
-print("Affected vendors:", duplicates['vendor'].nunique())
-
-# Risk classification
-duplicates['risk_level'] = 'High'
-
-print("\n=== RISK CLASSIFICATION ===")
-print(duplicates[['invoice_no', 'vendor', 'risk_level']])
+# Count duplicates
+print("\nTotal duplicate records found:", len(duplicates))
